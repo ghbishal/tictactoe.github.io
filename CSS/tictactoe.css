@@ -1,0 +1,300 @@
+/*----------
+Fonts Style
+------------*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;800;900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap'); */
+
+
+/* -------
+Custom css variables 
+---------- */
+
+
+/* color URL */
+/* https://coolors.co/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529 */
+
+
+:root{
+  --bg-black-100: #dddddd;
+  --bg-black-50: #eff0f4;
+  --hover-color-cyan: #00FFFF;
+  --text-white: #FFFFFF;
+
+  --form-bg-color:#e5e5e5;
+  --logo-red:#EE2E61;
+  --logo-blue:#00FFFF;
+  --logo-yellow:#FBD22D;
+  --color-green:#08d565;
+  --bg-black-black:#1b1b1b;
+  --bg-black-900::rgba(33, 37, 41,1);
+  --gradiant-back-ground:linear-gradient(150deg, #1b1b1b, #212529, #495057);
+}
+
+
+
+*{
+
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Dongle', sans-serif;
+
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+  
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+img {
+  width: 100%;
+}
+
+
+body{
+
+    background: var(--bg-black-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-white);
+
+
+    
+}
+
+
+
+.container-game{
+  width: 330px;
+  height: 400px;
+  padding: 20px;
+  /* background-color: var(--logo-red); */
+  border-radius:25px;
+  color: var(--text-white);
+
+
+}
+
+.container-game .game-title, 
+.container-game .game-title span{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Fredoka One', serif;
+
+}
+
+.container-game .game-title span{
+    color: var(--text-white);
+    animation: game-change 6s infinite;
+}
+
+@keyframes game-change {
+
+    0%{color: var(--text-white);}
+    50%{color: var(--logo-blue)}
+    100%{color: var(--logo-yellow)}
+
+}
+
+.container-game .game-action{
+  margin-top: 5px;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.game-action .turns{
+  padding: 5px;
+
+}
+
+.game-action span{
+  color: var(--color-green);
+}
+
+.reset{
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid  white;
+  border-radius: 10px;
+}
+
+.reset:hover{
+  background-color: var(--logo-red);
+}
+
+.game-content{
+  /* background-color: var(--bg-black-black); */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin: 10px;
+
+}
+
+.game-box{
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-green);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.game-box:hover{
+  background-color: #343A40;
+}
+
+
+.o{
+  cursor: default;
+  background: var(--logo-yellow);
+}
+
+.x{
+  cursor: default;
+  background: var(--logo-red);
+}
+
+
+
+.x::after{
+  content: 'x';
+
+  font-size: 8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+
+}
+
+.o::after{
+  content: 'o';
+  font-size: 8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.preloader {
+  background-color: #0e0e0e;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+.preloader .preloader-block {
+  -webkit-transform: translate(50%, 50%);
+  bottom: 50%;
+  position: fixed;
+  right: 50%;
+  transform: translate(50%, 50%);
+  z-index: 3000;
+}
+
+.preloader .preloader-block .preloader-icon .loading-dot {
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+}
+
+.preloader .preloader-block .preloader-icon .loading-dot.loading-dot-1 {
+  -webkit-animation: 1.2s grow ease-in-out infinite;
+  animation: 1.2s grow ease-in-out infinite;
+}
+
+.preloader .preloader-block .preloader-icon .loading-dot.loading-dot-2 {
+  -webkit-animation: 1.2s grow ease-in-out infinite 0.15555s;
+  animation: 1.2s grow ease-in-out infinite 0.15555s;
+  margin: 0 14px;
+}
+
+.preloader .preloader-block .preloader-icon .loading-dot.loading-dot-3 {
+  -webkit-animation: 1.2s grow ease-in-out infinite 0.3s;
+  animation: 1.2s grow ease-in-out infinite 0.3s;
+}
+
+
+
+@-webkit-keyframes grow {
+
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
